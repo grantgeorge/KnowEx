@@ -6,7 +6,7 @@ gem 'rails-api'
 gem 'pg'
 gem 'devise_token_auth'
 gem 'omniauth'
-gem "active_model_serializers", "~> 0.8.0"
+gem "active_model_serializers", "~> 0.9.0"
 gem 'rack-rewrite'
 
 group :test, :development do
