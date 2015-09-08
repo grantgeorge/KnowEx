@@ -15,7 +15,8 @@ exports.paths = {
   src: 'src',
   dist: '../public',
   tmp: '.tmp',
-  e2e: 'e2e'
+  e2e: 'e2e',
+  bowerDir: './bower_components'
 };
 
 /**

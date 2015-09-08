@@ -73,6 +73,11 @@ gulp.task('fonts', function () {
     .pipe(gulp.dest(path.join(conf.paths.dist, '/fonts/')));
 });
 
+gulp.task('icons', function() { 
+  return gulp.src(conf.paths.bowerDir + '/fontawesome/fonts/**.*') 
+    .pipe(gulp.dest(path.join(conf.paths.dist, '/fonts/'))); 
+});
+
 gulp.task('other', function () {
   var fileFilter = $.filter(function (file) {
     return file.stat.isFile();
@@ -90,4 +95,4 @@ gulp.task('clean', function (done) {
   $.del([path.join(conf.paths.dist, '/'), path.join(conf.paths.tmp, '/')], { force: true }, done);
 });
 
-gulp.task('build', ['html', 'fonts', 'other']);
+gulp.task('build', ['html', 'fonts', 'icons', 'other']);

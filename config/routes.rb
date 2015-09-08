@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
   scope '/api' do
+    mount_devise_token_auth_for 'User', at: '/v1/auth', skip: [:omniauth_callbacks]
     namespace :v1, defaults: { format: :json } do
-
-      resources :articles, except: [:new, :edit]
-
+      resources :groups, except: [:new, :edit]
+      resources :posts, except: [:new, :edit]
     end
   end
 
