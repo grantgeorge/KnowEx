@@ -18,6 +18,11 @@
         url: '/articles',
         templateUrl: 'app/components/articles/articles.html',
         controller: 'ArticlesController'
+      })
+      .state('posts', {
+        url: '/posts',
+        templateUrl: 'app/components/posts/posts.html',
+        controller: 'PostsController'
       });
 
     $urlRouterProvider.otherwise('/');
