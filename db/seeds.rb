@@ -6,11 +6,23 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Article.create(title: 'Test Article',
-               body: 'A test article. Cool!')
-Article.create(title: 'Donald Trump Resigns from Presidential Candidacy',
-               body: 'Thanks goodness')
-Article.create(title: 'Child’s Description Of Heaven During Near-Death Experience Specifically Mentions Book Deal',
-               body: 'I\'d read it!')
-Article.create(title: 'New Poll Finds 74% Of Americans Would Be Comfortable Blaming Female President For Problems',
-               body: 'Classic.')
+u = User.create(name: 'Grant George', email: 'grant@grantgeorge.io',
+  uid: 'grant@grantgeorge.io', password: 'password', password_confirmation: 'password',
+  nickname: 'grant')
+
+g = Group.create(name: 'E-House', location: 'everywhere')
+
+u.groups << g
+
+Post.create(title: 'Test Post 1',
+              body: 'Test Post 1',
+              user: u)
+Post.create(title: 'Test Post 2',
+               body: 'Test Post 2',
+               user: u)
+Post.create(title: 'Test Post 3',
+               body: 'Test Post 3',
+               user: u)
+Post.create(title: 'Test Post 4',
+               body: 'Test Post 4',
+               user: u)
