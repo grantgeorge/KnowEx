@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('angularRails')
+  angular.module('know-ex')
     .controller('ArticlesController', function ($scope, Articles) {
 
       Articles.query(function (res) {

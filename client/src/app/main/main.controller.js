@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('angularRails')
+    .module('know-ex')
     .controller('MainController', MainController);
 
   /** @ngInject */
