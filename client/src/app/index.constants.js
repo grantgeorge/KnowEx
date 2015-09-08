@@ -3,7 +3,7 @@
   'use strict';
 
   angular
-    .module('angularRails')
+    .module('know-ex')
     .constant('malarkey', malarkey)
     .constant('toastr', toastr)
     .constant('moment', moment);

@@ -3,7 +3,7 @@
 
   describe('controllers', function(){
 
-    beforeEach(module('angularRails'));
+    beforeEach(module('know-ex'));
 
     it('should define more than 5 awesome things', inject(function($controller) {
       var vm = $controller('MainController');
