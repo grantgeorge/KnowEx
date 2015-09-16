@@ -14,10 +14,10 @@
         controller: 'MainController',
         controllerAs: 'main'
       })
-      .state('articles', {
-        url: '/articles',
-        templateUrl: 'app/components/articles/articles.html',
-        controller: 'ArticlesController'
+      .state('post', {
+        url: '/posts/:postId',
+        templateUrl: 'app/components/posts/post.html',
+        controller: 'PostController'
       })
       .state('posts', {
         url: '/posts',
