@@ -11,10 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150908015039) do
+ActiveRecord::Schema.define(version: 20150916053740) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "advices", force: :cascade do |t|
+    t.text     "description"
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "advices", ["post_id"], name: "index_advices_on_post_id", using: :btree
+  add_index "advices", ["user_id"], name: "index_advices_on_user_id", using: :btree
+
+  create_table "endorsements", force: :cascade do |t|
+    t.text     "text"
+    t.integer  "user_id"
+    t.integer  "endorseable_id"
+    t.string   "endorseable_type"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "endorsements", ["endorseable_type", "endorseable_id"], name: "index_endorsements_on_endorseable_type_and_endorseable_id", using: :btree
+  add_index "endorsements", ["user_id"], name: "index_endorsements_on_user_id", using: :btree
 
   create_table "groups", force: :cascade do |t|
     t.string   "name"
@@ -38,6 +61,16 @@ ActiveRecord::Schema.define(version: 20150908015039) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "tags", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "tags", ["taggable_type", "taggable_id"], name: "index_tags_on_taggable_type_and_taggable_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "provider",               default: "email", null: false
@@ -69,4 +102,7 @@ ActiveRecord::Schema.define(version: 20150908015039) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true, using: :btree
 
+  add_foreign_key "advices", "posts"
+  add_foreign_key "advices", "users"
+  add_foreign_key "endorsements", "users"
 end
