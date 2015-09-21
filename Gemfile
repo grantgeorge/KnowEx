@@ -1,40 +1,47 @@
-source 'https://rubygems.org'
-ruby '2.2.3'
+source "https://rubygems.org"
+ruby "2.2.3"
 
-gem 'rails'
-gem 'rails-api'
-gem 'pg'
-gem 'devise_token_auth'
-gem 'omniauth'
+gem "rails"
+gem "rails-api"
+gem "pg"
+gem "devise_token_auth"
+gem "omniauth"
 gem "active_model_serializers", "~> 0.9.0"
-gem 'rack-rewrite'
+gem "rack-rewrite"
+
+group :development do
+  gem "spring"
+  gem "spring-commands-rspec"
+  gem "web-console"
+end
 
 group :test, :development do
-  # Application running
-  gem 'spring'
+  gem "awesome_print"
+  gem "bundler-audit", require: false
+  gem "byebug"
+  gem "colorize"
+  gem "dotenv-rails"
+  gem "pry-rails"
+  gem "rspec-rails", "~> 3.3.0"
+  gem "faker"
+  gem "factory_girl_rails"
+end
 
-  # Testing
-  gem 'rspec-rails'
-  gem 'faker'
-  gem 'factory_girl_rails'
-  gem 'guard-rspec'
-  gem 'spring-commands-rspec'
-  gem 'database_cleaner'
-
-  # E2E Testing
-  # gem 'capybara', '2.4.4'
-  # gem 'selenium-webdriver', '2.46.2'
-  # gem 'capybara-webkit', '1.6.0'
-
-  # Logging/debugging
-  gem 'colorize'
-  gem 'byebug'
-  gem 'web-console'
-
-  # gem 'growl'
-  # gem 'rb-fsevent'
+group :test do
+  gem "guard-rspec"
+  gem "rb-fsevent", require: false
+  gem "growl", require: false
+  gem "capybara-webkit", ">= 1.2.0"
+  gem "database_cleaner"
+  gem "formulaic"
+  gem "launchy"
+  gem "shoulda-matchers", require: false
+  gem "simplecov", require: false
+  gem "timecop"
+  gem "webmock"
 end
 
 group :production, :staging do
-  gem 'rails_12factor', '0.0.3'
+  gem "rails_12factor", "0.0.3"
+  gem "rack-timeout"
 end

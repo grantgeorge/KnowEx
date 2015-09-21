@@ -21,7 +21,7 @@
     <div class="panel-footer">Posted by: {{ post.user.nickname }}</div>
   </div>
 
-  <div class="panel panel-default" ng-repeat="endorsement in endorsements">
+  <div class="panel panel-default" ng-repeat="endorsement in post.endorsements">
     <div class="panel-heading">
       <h3 class="panel-title">
         Endorsement of {{ post.user.nickname }} on:

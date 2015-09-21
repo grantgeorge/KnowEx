@@ -1,15 +1,18 @@
 class V1::PostsController < ApplicationController
-  before_action :set_post, only: [:show, :update, :destroy]
+  before_action :set_post, only: [:update, :destroy]
 
   # GET /posts
   def index
-    @posts = Post.all.includes(:user)
+    @posts = Post.all.includes(:user, :endorsements, :advices)
 
     render json: @posts
   end
 
   # GET /posts/1
   def show
+
+    @post = Post.includes(:user).find(params[:id])
+
     render json: @post
   end
 
