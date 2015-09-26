@@ -14,7 +14,6 @@
         console.log($scope.tags);
         $scope.endorsements = $scope.post.endorsements;
 
-
         $scope.advices = $scope.post.advices;
         console.log($scope.endorsements);
         console.log($scope.advices);
