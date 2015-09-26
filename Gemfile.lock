@@ -55,9 +55,6 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    capybara-webkit (1.7.0)
-      capybara (>= 2.3.0, < 2.6.0)
-      json
     coderay (1.1.0)
     colorize (0.7.7)
     crack (0.4.2)
@@ -254,7 +251,6 @@ DEPENDENCIES
   awesome_print
   bundler-audit
   byebug
-  capybara-webkit (>= 1.2.0)
   colorize
   database_cleaner
   devise_token_auth

@@ -31,7 +31,6 @@ group :test do
   gem "guard-rspec"
   gem "rb-fsevent", require: false
   gem "growl", require: false
-  gem "capybara-webkit", ">= 1.2.0"
   gem "database_cleaner"
   gem "formulaic"
   gem "launchy"
