@@ -12,6 +12,8 @@ u = User.create(name: 'Grant George', email: 'grant@grantgeorge.io',
 
 g = Group.create(name: 'E-House', location: 'everywhere')
 
+p = Profile.create(introduction: "Hey! Call me Curious George!")
+
 u.groups << g
 
 Post.create(title: 'Test Post 1',
@@ -26,3 +28,4 @@ Post.create(title: 'Test Post 3',
 Post.create(title: 'Test Post 4',
                body: 'Test Post 4',
                user: u)
+

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     namespace :v1, defaults: { format: :json } do
       resources :groups, except: [:new, :edit]
       resources :posts, except: [:new, :edit]
+      resources :profiles, except: [:new, :edit]
     end
   end
 
