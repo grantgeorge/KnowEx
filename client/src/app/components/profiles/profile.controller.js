@@ -4,14 +4,9 @@
   angular.module('know-ex')
     .controller('ProfileController', function ($scope, Profiles, $stateParams) {
 
-      console.log('profile controller');
-
-      Profiles.get({profileId: $stateParams.profileId},function (res) {
-        $scope.profile = res;
-        console.log($scope.profile);
-
-        $scope.intro = $scope.profile.intro;
-        console.log($scope.intro);
+      Profiles.get(function (res) {
+        $scope.introduction = $scope.profile.introduction;
+        console.log($scope.introduction);
 
       });
 
