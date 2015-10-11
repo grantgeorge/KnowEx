@@ -4,7 +4,7 @@ class V1::ProfilesController < ApplicationController
   # GET /profiles
   # GET /profiles.json
   def index
-    @profiles = Profile.all
+    @profiles = Profile.all.includes(:user)
 
     render json: @profiles
   end
@@ -12,7 +12,11 @@ class V1::ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
+
+    @post = Post.includes(:user).find(params[:id])
+
     render json: @profile
+    
   end
 
   # POST /profiles

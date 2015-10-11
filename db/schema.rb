@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 20150930001418) do
 
   create_table "profiles", force: :cascade do |t|
     t.text     "introduction"
+    t.integer  "user_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
