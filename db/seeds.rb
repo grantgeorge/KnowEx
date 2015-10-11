@@ -6,7 +6,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+
+# Group shared across Users
 ehouse = Group.create(name: 'E-House', location: 'everywhere')
+
+# Initializing User #1: Grant George
 
 grant_user = User.create(name: 'Grant George', email: 'grant@grantgeorge.io',
   uid: 'grant@grantgeorge.io', password: 'password', password_confirmation: 'password',
@@ -34,6 +38,7 @@ Post.create(title: 'Test Post 4',
                body: 'Test Post 4',
                user: grant_user)
 
+# Initializing User #2: Rob Reinold
 
 rob_user = User.create(name: 'Rob Reinold', email: 'rreinold@gmail.com',
   uid: 'rreinold@gmail.com', password: 'password', password_confirmation: 'password',
