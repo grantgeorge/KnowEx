@@ -18,9 +18,12 @@
     <div class="panel-body">
       {{ post.body }}
     </div>
-    <div class="panel-footer">Posted by: 
-      <a ng-href="#/profiles/{{ post.user.id}}">{{ post.user.nickname }}
-    </a>
+    <div class="panel-footer">
+      Posted by 
+      <a ng-href="#/profiles/{{ post.user.id}}">
+        {{ post.user.nickname }}
+      </a>
+      on {{ post.created_at | date:"MMMM dd',' yyyy h:mm a"}}
   </div>
   </div>
 
@@ -36,7 +39,9 @@
     <div class="panel-body">
       {{ endorsement.text }}
     </div>
-    <div class="panel-footer">Posted by: <a ng-href="#/profiles/{{ endorsement.user.id}}">{{ endorsement.user.nickname }}</a></div>
+    <div class="panel-footer">Posted by <a ng-href="#/profiles/{{ endorsement.user.id}}">{{ endorsement.user.nickname }}</a>
+    on {{ post.created_at | date:"MMMM dd',' yyyy h:mm a"}}
+    </div>
   </div>
 
   <div class="panel panel-danger" ng-repeat="advice in advices">

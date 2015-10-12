@@ -1,5 +1,5 @@
 class PostSerializer < ActiveModel::Serializer
-  attributes :id, :title, :body, :published
+  attributes :id, :title, :body, :published, :created_at
   has_one :user, serializer: UserShortSerializer
   has_many :endorsements, serializer: EndorsementSerializer
   has_many :advices, serializer: AdviceSerializer

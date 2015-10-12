@@ -24,17 +24,11 @@ ehouse = Group.create(name: 'E-House', location: 'everywhere')
     # TODO: Address error caused by added profile
     # grant_user.profiles << grant_profile
 
-    p1 = Post.create(title: 'Post 1',
-                  body: 'Post 1',
+    p1 = Post.create(title: 'How to build a Rails Web App with Friends',
+                  body: 'A test article. Cool!',
                   user: grant_user)
-    p2 = Post.create(title: 'Post 2',
-                   body: 'Post 2',
-                   user: grant_user)
-    p3 = Post.create(title: 'Post 3',
-                   body: 'Post 3',
-                   user: grant_user)
-    p4 = Post.create(title: 'Post 4',
-                   body: 'Post 4',
+    p2 = Post.create(title: 'Donald Trump Resigns from Presidential Candidacy',
+                   body: 'Thanks goodness',
                    user: grant_user)
 
 
@@ -53,17 +47,11 @@ ehouse = Group.create(name: 'E-House', location: 'everywhere')
     # TODO: Address error caused by added profile
     # rob_user.profiles << rob_profile
 
-    p5 = Post.create(title: 'Post 5',
-                  body: 'Post 5',
+    p3 = Post.create(title: 'Child’s Description Of Heaven During Near-Death Experience Specifically Mentions Book Deal',
+                  body: 'I\'d read it!',
                   user: rob_user)
-    p6 = Post.create(title: 'Post 6',
-                   body: 'Post 6',
-                   user: rob_user)
-    p7 = Post.create(title: 'Post 7',
-                   body: 'Post 7',
-                   user: rob_user)
-    p8 = Post.create(title: 'Post 8',
-                   body: 'Post 8',
+    p4 = Post.create(title: 'New Poll Finds 74% Of Americans Would Be Comfortable Blaming Female President For Problems',
+                   body: 'Classic.',
                    user: rob_user)
 
 # ======== Add Endorsements ========
@@ -104,14 +92,3 @@ ehouse = Group.create(name: 'E-House', location: 'everywhere')
 
     p1.endorsements << e1
     p2.endorsements << e2
-
-# RR: This may be outdated?
-
-Article.create(title: 'Test Article',
-               body: 'A test article. Cool!')
-Article.create(title: 'Donald Trump Resigns from Presidential Candidacy',
-               body: 'Thanks goodness')
-Article.create(title: 'Child’s Description Of Heaven During Near-Death Experience Specifically Mentions Book Deal',
-               body: 'I\'d read it!')
-Article.create(title: 'New Poll Finds 74% Of Americans Would Be Comfortable Blaming Female President For Problems',
-               body: 'Classic.')
