@@ -13,7 +13,12 @@
     <div class="panel-body">
       {{ post.body }}
     </div>
-    <div class="panel-footer">Posted by: {{ post.user.nickname }}</div>
+    <div class="panel-footer">
+      Posted by: 
+      <a ng-href="#/profiles/ {{ post.user.id}}">
+      {{ post.user.nickname }}
+    </a>
+    </div>
   </div>
 
 </div>

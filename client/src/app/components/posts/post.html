@@ -18,13 +18,16 @@
     <div class="panel-body">
       {{ post.body }}
     </div>
-    <div class="panel-footer">Posted by: {{ post.user.nickname }}</div>
+    <div class="panel-footer">Posted by: 
+      <a ng-href="#/profiles/{{ post.user.id}}">{{ post.user.nickname }}
+    </a>
+  </div>
   </div>
 
   <div class="panel panel-default" ng-repeat="endorsement in post.endorsements">
     <div class="panel-heading">
       <h3 class="panel-title">
-        Endorsement of {{ post.user.nickname }} on:
+        Endorsement of <a ng-href="#/profiles/{{ post.user.id}}">{{ post.user.nickname }}</a> on:
         <span class="label label-default" ng-repeat="tag in endorsement.tags">
           {{ tag.name }}
         </span>
@@ -33,7 +36,7 @@
     <div class="panel-body">
       {{ endorsement.text }}
     </div>
-    <div class="panel-footer">Posted by: {{ endorsement.user.nickname }}</div>
+    <div class="panel-footer">Posted by: <a ng-href="#/profiles/{{ post.user.id}}">{{ endorsement.user.nickname }}</a></div>
   </div>
 
   <div class="panel panel-default" ng-repeat="advice in advices">
@@ -60,7 +63,7 @@
         <div class="panel-body">
           {{ endorsement.text }}
         </div>
-        <div class="panel-footer">Posted by: {{ endorsement.user.nickname }}</div>
+        <div class="panel-footer">Posted by: <a ng-href="#/profiles/{{ post.user.id}}">{{ endorsement.user.nickname }}</a></div>
       </div>
 
     </div>
