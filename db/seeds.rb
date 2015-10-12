@@ -10,58 +10,60 @@
 # Group shared across Users
 ehouse = Group.create(name: 'E-House', location: 'everywhere')
 
-# Initializing User #1: Grant George
+# ======== Initializing User #1: Grant George ========
 
-grant_user = User.create(name: 'Grant George', email: 'grant@grantgeorge.io',
-  uid: 'grant@grantgeorge.io', password: 'password', password_confirmation: 'password',
-  nickname: 'grant')
+    grant_user = User.create(name: 'Grant George', email: 'grant@grantgeorge.io',
+      uid: 'grant@grantgeorge.io', password: 'password', password_confirmation: 'password',
+      nickname: 'grant')
 
-grant_profile = Profile.create(
-  introduction: "Hey! Call me Curious George!",
-  user: grant_user)
+    grant_profile = Profile.create(
+      introduction: "Hey! Call me Curious George!",
+      user: grant_user)
 
-grant_user.groups << ehouse
+    grant_user.groups << ehouse
 
-# TODO: Address error caused by added profile
-# grant_user.profiles << grant_profile
+    # TODO: Address error caused by added profile
+    # grant_user.profiles << grant_profile
 
-Post.create(title: 'Test Post 1',
-              body: 'Test Post 1',
-              user: grant_user)
-Post.create(title: 'Test Post 2',
-               body: 'Test Post 2',
-               user: grant_user)
-Post.create(title: 'Test Post 3',
-               body: 'Test Post 3',
-               user: grant_user)
-Post.create(title: 'Test Post 4',
-               body: 'Test Post 4',
-               user: grant_user)
+    Post.create(title: 'Test Post 1',
+                  body: 'Test Post 1',
+                  user: grant_user)
+    Post.create(title: 'Test Post 2',
+                   body: 'Test Post 2',
+                   user: grant_user)
+    Post.create(title: 'Test Post 3',
+                   body: 'Test Post 3',
+                   user: grant_user)
+    Post.create(title: 'Test Post 4',
+                   body: 'Test Post 4',
+                   user: grant_user)
 
-# Initializing User #2: Rob Reinold
+# ======== Initializing User #2: Rob Reinold ========
 
-rob_user = User.create(name: 'Rob Reinold', email: 'rreinold@gmail.com',
-  uid: 'rreinold@gmail.com', password: 'password', password_confirmation: 'password',
-  nickname: 'rob')
+    rob_user = User.create(name: 'Rob Reinold', email: 'rreinold@gmail.com',
+      uid: 'rreinold@gmail.com', password: 'password', password_confirmation: 'password',
+      nickname: 'rob')
 
-rob_profile = Profile.create(
-  introduction: "Hey! I'm Rob the Builder!",
-  user: rob_user)
+    rob_profile = Profile.create(
+      introduction: "Hey! I'm Rob the Builder!",
+      user: rob_user)
 
-rob_user.groups << ehouse
+    rob_user.groups << ehouse
 
-# TODO: Address error caused by added profile
-# rob_user.profiles << rob_profile
+    # TODO: Address error caused by added profile
+    # rob_user.profiles << rob_profile
 
-Post.create(title: 'Test Post 1',
-              body: 'Test Post 1',
-              user: rob_user)
-Post.create(title: 'Test Post 2',
-               body: 'Test Post 2',
-               user: rob_user)
-Post.create(title: 'Test Post 3',
-               body: 'Test Post 3',
-               user: rob_user)
-Post.create(title: 'Test Post 4',
-               body: 'Test Post 4',
-               user: rob_user)
+    Post.create(title: 'Test Post 1',
+                  body: 'Test Post 1',
+                  user: rob_user)
+    Post.create(title: 'Test Post 2',
+                   body: 'Test Post 2',
+                   user: rob_user)
+    Post.create(title: 'Test Post 3',
+                   body: 'Test Post 3',
+                   user: rob_user)
+    Post.create(title: 'Test Post 4',
+                   body: 'Test Post 4',
+                   user: rob_user)
+
+    Endorsement.create()

@@ -4,8 +4,21 @@
     <acme-navbar />
   </div>
 
-  <h1>Profile</h1>
+  <h1>This profile is on 
+    <span class="glyphicon glyphicon-fire"></span>
+    ! Help me
+    <acme-malarkey extra-values="['Rob', 'Grant', 'Alex^2', 'Jesus', 'Jewish Guy', 'Tom Cruise']" />
+    !
+  </h1>
 
-  <h2>      {{ profile.intro }} </h2>
+<!--<div class="container" ng-repeat="profile in profiles"> -->
+  <div class="container" >
+  <div class="jumbotron">
+    <h1>{{ profile.user.nickname }}</h1> 
+    <p>{{ profile.introduction }}</p> 
+    <p></p> 
+  </div>
+</div>
+
 
 </div>

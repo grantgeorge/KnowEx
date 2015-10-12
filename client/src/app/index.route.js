@@ -29,6 +29,11 @@
         templateUrl: 'app/components/profiles/profiles.html',
         controller: 'ProfilesController'
       })
+      .state('profile', {
+        url: '/profiles/:profileId',
+        templateUrl: 'app/components/profiles/profile.html',
+        controller: 'ProfileController'
+      })
       .state('about', {
         url: '/about',
         templateUrl: 'app/components/about/about.html',
