@@ -4,12 +4,12 @@
     <acme-navbar />
   </div>
 
-  <h1>Post</h1>
+  <h1>Post - Detailed</h1>
 
   <div class="panel panel-default">
     <div class="panel-heading">
       <h3 class="panel-title">
-        <span class="badge">{{post.tags.length}} </span>{{ post.title }}
+        <span class="badge">{{post.tags.length}} </span> {{post.title }}
         <span class="label label-default" ng-repeat="tag in tags">
           {{ tag.name }}
         </span>
@@ -36,7 +36,7 @@
     <div class="panel-body">
       {{ endorsement.text }}
     </div>
-    <div class="panel-footer">Posted by: <a ng-href="#/profiles/{{ post.user.id}}">{{ endorsement.user.nickname }}</a></div>
+    <div class="panel-footer">Posted by: <a ng-href="#/profiles/{{ endorsement.user.id}}">{{ endorsement.user.nickname }}</a></div>
   </div>
 
   <div class="panel panel-default" ng-repeat="advice in advices">
@@ -63,7 +63,7 @@
         <div class="panel-body">
           {{ endorsement.text }}
         </div>
-        <div class="panel-footer">Posted by: <a ng-href="#/profiles/{{ post.user.id}}">{{ endorsement.user.nickname }}</a></div>
+        <div class="panel-footer">Posted by: <a ng-href="#/profiles/{{ endorsement.user.id}}">{{ endorsement.user.nickname }}</a></div>
       </div>
 
     </div>

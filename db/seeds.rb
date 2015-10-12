@@ -25,18 +25,19 @@ ehouse = Group.create(name: 'E-House', location: 'everywhere')
     # TODO: Address error caused by added profile
     # grant_user.profiles << grant_profile
 
-    Post.create(title: 'Test Post 1',
-                  body: 'Test Post 1',
+    p1 = Post.create(title: 'Post 1',
+                  body: 'Post 1',
                   user: grant_user)
-    Post.create(title: 'Test Post 2',
-                   body: 'Test Post 2',
+    p2 = Post.create(title: 'Post 2',
+                   body: 'Post 2',
                    user: grant_user)
-    Post.create(title: 'Test Post 3',
-                   body: 'Test Post 3',
+    p3 = Post.create(title: 'Post 3',
+                   body: 'Post 3',
                    user: grant_user)
-    Post.create(title: 'Test Post 4',
-                   body: 'Test Post 4',
+    p4 = Post.create(title: 'Post 4',
+                   body: 'Post 4',
                    user: grant_user)
+
 
 # ======== Initializing User #2: Rob Reinold ========
 
@@ -53,17 +54,39 @@ ehouse = Group.create(name: 'E-House', location: 'everywhere')
     # TODO: Address error caused by added profile
     # rob_user.profiles << rob_profile
 
-    Post.create(title: 'Test Post 1',
-                  body: 'Test Post 1',
+    p5 = Post.create(title: 'Post 5',
+                  body: 'Post 5',
                   user: rob_user)
-    Post.create(title: 'Test Post 2',
-                   body: 'Test Post 2',
+    p6 = Post.create(title: 'Post 6',
+                   body: 'Post 6',
                    user: rob_user)
-    Post.create(title: 'Test Post 3',
-                   body: 'Test Post 3',
+    p7 = Post.create(title: 'Post 7',
+                   body: 'Post 7',
                    user: rob_user)
-    Post.create(title: 'Test Post 4',
-                   body: 'Test Post 4',
+    p8 = Post.create(title: 'Post 8',
+                   body: 'Post 8',
                    user: rob_user)
 
-    Endorsement.create()
+# ======== Add Endorsements ========
+
+    e1 = Endorsement.create(
+      text:"DevSkills",
+      user_id: 2,
+      endorseable_id: 1,
+      endorseable_type: "Post"
+      )
+
+    e2 = Endorsement.create(
+      text:"$WAG",
+      user_id: 2,
+      endorseable_id: 2,
+      endorseable_type: "Post"
+      )
+
+    p1.reload
+    p2.reload
+    p1.endorsements << e1
+    p2.endorsements << e2
+
+
+
