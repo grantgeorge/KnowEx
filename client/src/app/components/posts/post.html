@@ -6,11 +6,11 @@
 
   <h1>Post - Detailed</h1>
 
-  <div class="panel panel-default">
+  <div class="panel panel-primary">
     <div class="panel-heading">
       <h3 class="panel-title">
-        <span class="badge">{{post.tags.length}} </span> {{post.title }}
-        <span class="label label-default" ng-repeat="tag in tags">
+        <span class="badge">{{post.tags.length}} </span> &nbsp; {{post.title }}
+        <span class="label label-success" ng-repeat="tag in tags">
           {{ tag.name }}
         </span>
       </h3>
@@ -24,11 +24,11 @@
   </div>
   </div>
 
-  <div class="panel panel-default" ng-repeat="endorsement in post.endorsements">
+  <div class="panel panel-info" ng-repeat="endorsement in post.endorsements">
     <div class="panel-heading">
       <h3 class="panel-title">
         Endorsement of <a ng-href="#/profiles/{{ post.user.id}}">{{ post.user.nickname }}</a> on:
-        <span class="label label-default" ng-repeat="tag in endorsement.tags">
+        <span class="label label-success" ng-repeat="tag in endorsement.tags">
           {{ tag.name }}
         </span>
       </h3>
@@ -39,7 +39,7 @@
     <div class="panel-footer">Posted by: <a ng-href="#/profiles/{{ endorsement.user.id}}">{{ endorsement.user.nickname }}</a></div>
   </div>
 
-  <div class="panel panel-default" ng-repeat="advice in advices">
+  <div class="panel panel-danger" ng-repeat="advice in advices">
     <div class="panel-heading">
       <h3 class="panel-title">
         Advice to {{ post.user.nickname }} on:
