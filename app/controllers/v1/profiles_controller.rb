@@ -1,11 +1,15 @@
 class V1::ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :update, :destroy]
 
+
+  
   # GET /profiles
   # GET /profiles.json
   def index
     @profiles = Profile.all.includes(:user)
-
+    for profile in @profiles
+        profile.user.nickname.capitalize!
+    end
     render json: @profiles
   end
 
@@ -13,8 +17,8 @@ class V1::ProfilesController < ApplicationController
   # GET /profiles/1.json
   def show
 
-    @post = Post.includes(:user).find(params[:id])
-
+    @profile = Profile.includes(:user).find(params[:id])
+    @profile.user.nickname.capitalize!
     render json: @profile
     
   end
@@ -25,6 +29,7 @@ class V1::ProfilesController < ApplicationController
     @profile = Profile.new(profile_params)
 
     if @profile.save
+      @profile.user.nickname.capitalize!
       render json: @profile, status: :created, location: @profile
     else
       render json: @profile.errors, status: :unprocessable_entity
@@ -55,6 +60,7 @@ class V1::ProfilesController < ApplicationController
 
     def set_profile
       @profile = Profile.find(params[:id])
+      @profile.user.nickname.capitalize!
     end
 
     def profile_params
