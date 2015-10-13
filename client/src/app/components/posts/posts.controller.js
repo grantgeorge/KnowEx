@@ -13,7 +13,7 @@
           
         	console.log($scope.posts[i].elapsedTime);
         }
-
+      });
         // Load all popular posts
         $scope.loadPopular = function(){
           console.log("Tried to load popular");
@@ -73,8 +73,6 @@
           });
 
         };
-
-      });
 
     });
 })();
