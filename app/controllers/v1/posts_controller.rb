@@ -55,7 +55,7 @@ class V1::PostsController < ApplicationController
 
   # GET /newest
   def newest
-    @posts = Post.all.includes(:user, :endorsements, :advices).limit(15).sort_by(&:created_at).reverse!
+    @posts = Post.all.includes(:user, :endorsements, :advices).where(created_at: Time.zone.now.all_month).limit(15).sort_by(&:created_at).reverse!
 
     render json: @posts
   end

@@ -81,6 +81,12 @@ ehouse = Group.create(name: 'E-House', location: 'everywhere')
       endorseable_id: 1,
       endorseable_type: "Post"
       )
+    e4 = Endorsement.create(
+      text:"MadSkillz",
+      user_id: 2,
+      endorseable_id: 4,
+      endorseable_type: "Post"
+      )
 
 
     t1 = Tag.create(name:"DevSkills")
@@ -89,12 +95,19 @@ ehouse = Group.create(name: 'E-House', location: 'everywhere')
 
     t3 = Tag.create(name:"Design")
 
+    t4 = Tag.create(name:"MadSkillz");
+
     e1.tags << t1
     e2.tags << t2
     e3.tags << t3
+    e4.tags << t4
 
     p1.reload
     p2.reload
+    p3.reload
+    p4.reload
 
     p1.endorsements << e1
     p2.endorsements << e2
+    p1.endorsements << e3
+    p4.endorsements << e4

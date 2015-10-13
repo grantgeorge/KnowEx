@@ -14,6 +14,7 @@
         	console.log($scope.posts[i].elapsedTime);
         }
 
+        // Load all popular posts
         $scope.loadPopular = function(){
           console.log("Tried to load popular");
 
@@ -33,6 +34,7 @@
 
         };
 
+        // Load new posts
         $scope.loadNew = function(){
           console.log("Loading new");
 
@@ -46,12 +48,13 @@
               
               console.log($scope.posts[i].elapsedTime);
             }
-            toastr.info("Posts from this week!");
+            toastr.info("Posts from this month!");
 
           });
 
         };
 
+        // Load all hot posts
         $scope.loadHot = function(){
           console.log("Loading hot");
 
@@ -65,7 +68,7 @@
               
               console.log($scope.posts[i].elapsedTime);
             }
-            toastr.info("Best Posts from this week!");
+            toastr.info("Best Posts from last 2 weeks!");
 
           });
 

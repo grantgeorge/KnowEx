@@ -29,7 +29,7 @@ var getElapsedTime = function(creationTime, currentTime){
     var seconds = diffSeconds;
     output += seconds;
     output += " second"
-    output += pluralize(output, sconds);
+    output += pluralize(output, seconds);
   }
   // Use Minutes Units
   else if(diffSeconds < secondsPerHour){
