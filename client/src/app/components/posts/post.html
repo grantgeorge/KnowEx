@@ -21,9 +21,10 @@
     <div class="panel-footer">
       Posted by 
       <a ng-href="#/profiles/{{ post.user.id}}">
-        {{ post.user.nickname }}
+        {{ post.user.nickname }},
       </a>
-      on {{ post.created_at | date:"MMMM dd',' yyyy h:mm a"}}
+      <!--on {{ post.created_at | date:"MMMM dd',' yyyy h:mm a"}}-->
+      {{ elapsedTime }}
   </div>
   </div>
 
@@ -42,9 +43,10 @@
     <div class="panel-footer">
       Posted by 
       <a ng-href="#/profiles/{{ endorsement.user.id}}">
-        {{ endorsement.user.nickname }}
+        {{ endorsement.user.nickname }},
       </a>
-      on {{ post.created_at | date:"MMMM dd',' yyyy h:mm a"}}
+      <!-- on {{ post.created_at | date:"MMMM dd',' yyyy h:mm a"}} -->
+      {{ elapsedTime }}
     </div>
   </div>
 

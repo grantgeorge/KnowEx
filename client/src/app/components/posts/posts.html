@@ -12,11 +12,12 @@
         {{post.tags.length}}
       </div>
       <a ng-href="#/posts/{{post.id}}">
-          &nbsp;  {{ post.title}}&nbsp;
+          &nbsp;  {{ post.title }}&nbsp;
       </a>
             
-          <font color="grey"> 
-            {{post.created_at | date:"MMMM dd',' yyyy"}} 
+          <font color="#BEBEBE"> 
+            <!--{{post.created_at | date:"MMMM dd',' yyyy"}} -->
+            {{ post.created_at }}
           </font>
       <a ng-href="#/profiles/ {{ post.user.id}}" class="label label-success" style="float:right;">
         {{post.user.nickname}}

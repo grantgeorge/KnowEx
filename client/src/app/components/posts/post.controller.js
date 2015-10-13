@@ -17,6 +17,10 @@
         $scope.advices = $scope.post.advices;
         console.log($scope.endorsements);
         console.log($scope.advices);
+        
+        var now = new Date().getTime();
+        $scope.elapsedTime = getElapsedTime($scope.post.created_at, now);
+        console.log($scope.elapsedTime);
       });
 
     });
