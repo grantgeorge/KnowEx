@@ -16,7 +16,7 @@ var getElapsedTime = function(creationTime, currentTime){
 
   var pluralize = function(output, amount){
     if(amount > 1){
-      return "s"
+      return "s";
     }
     return "";
   }
@@ -28,14 +28,14 @@ var getElapsedTime = function(creationTime, currentTime){
   if(diffSeconds < secondsPerMinute){
     var seconds = diffSeconds;
     output += seconds;
-    output += " second"
+    output += " second";
     output += pluralize(output, seconds);
   }
   // Use Minutes Units
   else if(diffSeconds < secondsPerHour){
     var minutes = Math.floor(diffSeconds / secondsPerMinute);
     output += minutes;
-    output += " minute"
+    output += " minute";
     output += pluralize(output, minutes);
   }
   // Use Hours Units
@@ -63,7 +63,7 @@ var getElapsedTime = function(creationTime, currentTime){
   // }
   // Use Months Time
   else if (diffSeconds < secondsPerYear){
-    var months = Math.floor(diffSeconds / secondsPerMonth)
+    var months = Math.floor(diffSeconds / secondsPerMonth);
     output += months;
     output += " month";
     output += pluralize(output, months);
@@ -76,7 +76,7 @@ var getElapsedTime = function(creationTime, currentTime){
     output += pluralize(output, years);
   }
   
-  output += " ago"
+  output += " ago";
   return output;
 }
 
