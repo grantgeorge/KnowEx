@@ -60,6 +60,11 @@ ehouse = Group.create(name: 'E-House', location: 'everywhere')
                    body: 'Classic.',
                    user: rob_user)
 
+    p5 = Post.create(title: 'KnowEx Site Unites Entrepreneurs in new way!',
+                  body: 'Alex Chan is a genius!',
+                  user: rob_user
+                  )
+    
 # ======== Add Endorsements ========
 
     e1 = Endorsement.create(

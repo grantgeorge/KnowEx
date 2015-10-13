@@ -17,6 +17,26 @@
     <p></p> 
   </div>
 </div>
-
+ <h1> Below are {{ profile.user.nickname}}'s Posts</h1>
+ 
+<ul class="list-group" ng-repeat="post in profile.posts">
+  <li class="list-group-item">
+      <div class="badge badge-primary" style="float:left;">
+        {{post.tags.length}}
+      </div>
+      <a ng-href="#/posts/{{post.id}}">
+          &nbsp;  {{ post.title }}&nbsp;
+      </a>
+            
+          <font color="#BEBEBE"> 
+            <!--{{post.created_at | date:"MMMM dd',' yyyy"}} -->
+            {{ post.elapsedTime }}
+          </font>
+      <a ng-href="#/profiles/{{post.user.id}}" class="label label-success" style="float:right;">
+        {{post.user.nickname}}
+      </a>
+      
+  </li>
+</ul>
 
 </div>

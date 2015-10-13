@@ -19,7 +19,7 @@
         $scope.filter = function(filter){
           console.log("Loading " + filter);
           reloadPosts(filter,$scope, $http);
-          toastr.info("Loaded filter: " + filter);
+          toastr.info("Loaded Filter: " + filter);
           };
     });
 })();

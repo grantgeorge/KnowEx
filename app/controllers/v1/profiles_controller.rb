@@ -6,7 +6,7 @@ class V1::ProfilesController < ApplicationController
   # GET /profiles
   # GET /profiles.json
   def index
-    @profiles = Profile.all.includes(:user)
+    @profiles = Profile.all.includes(:user,:posts)
     for profile in @profiles
         profile.user.nickname.capitalize!
     end
@@ -17,8 +17,11 @@ class V1::ProfilesController < ApplicationController
   # GET /profiles/1.json
   def show
 
-    @profile = Profile.includes(:user).find(params[:id])
+    @profile = Profile.includes(:user,:posts).find(params[:id])
+    # TODO: I need this to sort by number of endorsements
+    # @profile.posts = Post.all.sort_by{|x| x.endorsements.length}.reverse!
     @profile.user.nickname.capitalize!
+
     render json: @profile
     
   end
