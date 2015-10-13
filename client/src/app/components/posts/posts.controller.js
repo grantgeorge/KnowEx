@@ -14,68 +14,32 @@
         	console.log($scope.posts[i].elapsedTime);
         }
       });
-        // Load all popular posts
-        $scope.loadPopular = function(){
-          console.log("Tried to load popular");
-
-          $http.get('api/v1/popular').success(function(data) {
-            $scope.posts = data;
-
-            for(var i = 0 ; i < $scope.posts.length; i++){
-
-              var now = new Date().getTime();
-              $scope.posts[i].elapsedTime = getElapsedTime($scope.posts[i].created_at, now);
-              
-              console.log($scope.posts[i].elapsedTime);
-            }
-            toastr.info("Most endorsed posts!");
-
-          });
-
-        };
 
         // Load new posts
-        $scope.loadNew = function(){
-          console.log("Loading new");
-
-          $http.get('api/v1/newest').success(function(data) {
-            $scope.posts = data;
-
-            for(var i = 0 ; i < $scope.posts.length; i++){
-
-              var now = new Date().getTime();
-              $scope.posts[i].elapsedTime = getElapsedTime($scope.posts[i].created_at, now);
-              
-              console.log($scope.posts[i].elapsedTime);
-            }
-            toastr.info("Posts from this month!!");
-
-          });
-
-        };
-
-        // Load all hot posts
-        $scope.loadHot = function(){
-          console.log("Loading hot");
-
-          $http.get('api/v1/hot').success(function(data) {
-            $scope.posts = data;
-
-            for(var i = 0 ; i < $scope.posts.length; i++){
-
-              var now = new Date().getTime();
-              $scope.posts[i].elapsedTime = getElapsedTime($scope.posts[i].created_at, now);
-              
-              console.log($scope.posts[i].elapsedTime);
-            }
-            toastr.info("Best Posts from last week!");
-
-          });
-
-        };
-
+        $scope.filter = function(filter){
+          console.log("Loading " + filter);
+          reloadPosts(filter,$scope, $http);
+          toastr.info("Loaded filter: " + filter);
+          };
     });
 })();
+
+// Helper method for reloading different filtered posts
+var reloadPosts = function(filter, $scope, $http){
+  console.log('api/v1/'+filter);
+          $http.get('api/v1/'+filter).success(function(data) {
+
+            for(var i = 0 ; i < data.length; i++){
+
+              var now = new Date().getTime();
+              data[i].elapsedTime = getElapsedTime(data[i].created_at, now);
+              
+              console.log(data[i].elapsedTime);
+
+              $scope.posts = data;
+            }
+          })
+        };
 
 // TODO: Need to import this from util/ElapsedTime.js
 // Instead of duplicating

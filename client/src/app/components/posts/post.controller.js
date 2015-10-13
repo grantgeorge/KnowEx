@@ -22,6 +22,7 @@
         $scope.post.elapsedTime = getElapsedTime($scope.post.created_at, now);
         console.log($scope.post.elapsedTime);
 
+        // Determine age of each post
         for(var i = 0 ; i < $scope.endorsements.length ; i++){
           $scope.endorsements[i].elapsedTime = getElapsedTime($scope.endorsements[i].created_at, now);
           console.log("Endorsement " + $scope.endorsements[i].elapsedTime);
