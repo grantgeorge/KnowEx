@@ -54,7 +54,7 @@ ehouse = Group.create(name: 'E-House', location: 'everywhere')
     p3 = Post.create(title: 'Child’s Description Of Heaven During Near-Death Experience Specifically Mentions Book Deal',
                   body: 'I\'d read it!',
                   user: rob_user,
-                  created_at: '30-9-2015'
+                  created_at: '20-9-2015'
                   )
     p4 = Post.create(title: 'New Poll Finds 74% Of Americans Would Be Comfortable Blaming Female President For Problems',
                    body: 'Classic.',

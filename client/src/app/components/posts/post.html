@@ -4,12 +4,13 @@
     <acme-navbar />
   </div>
 
-  <h1>Post - Detailed</h1>
+  <h1>{{post.title }}</h1>
 
+<h3> Posted by {{ post.user.nickname}} - {{post.elapsedTime}} </h3>
   <div class="panel panel-primary">
     <div class="panel-heading">
       <h3 class="panel-title">
-        <span class="badge">{{post.tags.length}} </span> &nbsp; {{post.title }}
+        <span class="badge">{{post.tags.length}} </span> &nbsp; 
         <span class="label label-success" ng-repeat="tag in tags">
           {{ tag.name }}
         </span>
@@ -23,8 +24,7 @@
       <a ng-href="#/profiles/{{ post.user.id}}">
         {{ post.user.nickname }},
       </a>
-      <!--on {{ post.created_at | date:"MMMM dd',' yyyy h:mm a"}}-->
-      {{ elapsedTime }}
+      {{post.elapsedTime}}
   </div>
   </div>
 
@@ -45,8 +45,7 @@
       <a ng-href="#/profiles/{{ endorsement.user.id}}">
         {{ endorsement.user.nickname }},
       </a>
-      <!-- on {{ post.created_at | date:"MMMM dd',' yyyy h:mm a"}} -->
-      {{ elapsedTime }}
+      {{ post.elapsedTime }}
     </div>
   </div>
 

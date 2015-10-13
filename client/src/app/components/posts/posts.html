@@ -4,7 +4,14 @@
     <acme-navbar />
   </div>
 
-  <h1>Posts - Overview</h1>
+  <h1>The Knowledge Exchange Community<acme-malarkey extra-values="['centralizes content', 'facilitates conversations', '', 'IS OVER 9000 !!!!!']" /></h1>
+<div class="btn-group" role="group" aria-label="...">
+  <button type="button" ng-click="loadPopular();" class="btn btn-info">Popular</button>
+  <button type="button" ng-click="loadNew()" class="btn btn-warning">New</button>
+  <button type="button" ng-click="loadHot()" class="btn btn-danger">Hot</button>
+</div>
+
+<br><br>
 
 <ul class="list-group" ng-repeat="post in posts">
   <li class="list-group-item">
@@ -17,7 +24,7 @@
             
           <font color="#BEBEBE"> 
             <!--{{post.created_at | date:"MMMM dd',' yyyy"}} -->
-            {{ post.created_at }}
+            {{ post.elapsedTime }}
           </font>
       <a ng-href="#/profiles/ {{ post.user.id}}" class="label label-success" style="float:right;">
         {{post.user.nickname}}
