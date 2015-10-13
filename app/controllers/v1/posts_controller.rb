@@ -62,7 +62,7 @@ class V1::PostsController < ApplicationController
 
   # GET /hot
   def hot
-    @posts = Post.all.where(created_at: Time.zone.now.all_month).includes(:user, :endorsements, :advices).limit(15).sort_by {|x| x.endorsements.length}.reverse!
+    @posts = Post.all.where(created_at: Time.zone.now.all_week).includes(:user, :endorsements, :advices).limit(15).sort_by {|x| x.endorsements.length}.reverse!
 
     render json: @posts
   end
