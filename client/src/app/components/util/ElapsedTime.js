@@ -45,20 +45,22 @@ var getElapsedTime = function(creationTime, currentTime){
     output += " hour";
     output += pluralize(output, hours);
   }
+  // NOTE: Week changed to Month caused by removal of weeks
   // Use Days Time
-  else if(diffSeconds < secondsPerWeek){
+  else if(diffSeconds < secondsPerMonth){
   var days= Math.floor(diffSeconds / secondsPerDay);
   output += days;
   output += " day";
   output += pluralize(output, days);
   }
+  //TODO: Determine whether or not to use WEEKS
   // Use Weeks Time
-  else if (diffSeconds < secondsPerMonth){
-    var weeks = Math.floor(diffSeconds / secondsPerWeek);
-    output += weeks;
-    output += " week";
-    output += pluralize(output, weeks);
-  }
+  // else if (diffSeconds < secondsPerMonth){
+  //   var weeks = Math.floor(diffSeconds / secondsPerWeek);
+  //   output += weeks;
+  //   output += " week";
+  //   output += pluralize(output, weeks);
+  // }
   // Use Months Time
   else if (diffSeconds < secondsPerYear){
     var months = Math.floor(diffSeconds / secondsPerMonth)
