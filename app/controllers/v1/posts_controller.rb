@@ -45,6 +45,28 @@ class V1::PostsController < ApplicationController
     head :no_content
   end
 
+  # GET /popular
+  # Most Endorsements
+  def popular
+    @posts = Post.all.includes(:user, :endorsements, :advices).limit(15).sort_by {|x| x.endorsements.length}.reverse!
+
+    render json: @posts
+  end
+
+  # GET /newest
+  def newest
+    @posts = Post.all.includes(:user, :endorsements, :advices).limit(15).sort_by(&:created_at).reverse!
+
+    render json: @posts
+  end
+
+  # GET /hot
+  def hot
+    @posts = Post.all.where(created_at: Time.zone.now.all_month).includes(:user, :endorsements, :advices).limit(15).sort_by {|x| x.endorsements.length}.reverse!
+
+    render json: @posts
+  end
+
   private
 
     def set_post

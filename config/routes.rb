@@ -6,6 +6,9 @@ Rails.application.routes.draw do
       resources :groups, except: [:new, :edit]
       resources :posts, except: [:new, :edit]
       resources :profiles, except: [:new, :edit]
+      get 'popular', to: 'posts#popular'
+      get 'newest', to: 'posts#newest'
+      get 'hot', to:'posts#hot'
     end
   end
 
