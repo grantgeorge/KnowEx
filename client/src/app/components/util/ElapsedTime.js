@@ -1,4 +1,6 @@
 var getElapsedTime = function(creationTime, currentTime){
+  'use strict';
+  
   var secondsPerMinute =  60;
   var secondsPerHour =    3600;
   var secondsPerDay =     86400;
