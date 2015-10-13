@@ -19,7 +19,7 @@ class V1::ProfilesController < ApplicationController
 
     @profile = Profile.includes(:user,:posts).find(params[:id])
     # TODO: I need this to sort by number of endorsements
-    # @profile.posts = Post.all.sort_by{|x| x.endorsements.length}.reverse!
+    # @profile.posts = @profile.posts.sort_by{|x| x.endorsements.length}.reverse
     @profile.user.nickname.capitalize!
 
     render json: @profile
