@@ -1,6 +1,6 @@
 var getElapsedTime = function(creationTime, currentTime){
   'use strict';
-  
+
   var secondsPerMinute =  60;
   var secondsPerHour =    3600;
   var secondsPerDay =     86400;
@@ -14,14 +14,14 @@ var getElapsedTime = function(creationTime, currentTime){
     var current_seconds = new Date(currentTime).getTime() / 1000;
     current_seconds = Math.round(current_seconds);
     return current_seconds - creation_seconds;
-  }
+  };
 
   var pluralize = function(output, amount){
     if(amount > 1){
       return "s";
     }
     return "";
-  }
+  };
 
   var diffSeconds = getDiffSeconds(creationTime, currentTime);
 
@@ -80,5 +80,5 @@ var getElapsedTime = function(creationTime, currentTime){
   
   output += " ago";
   return output;
-}
+};
 

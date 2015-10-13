@@ -9,7 +9,7 @@
         for(var i = 0 ; i < $scope.posts.length; i++){
 
         	var now = new Date().getTime();
-        	$scope.posts[i].elapsedTime = getElapsedTime($scope.posts[i].created_at, now);
+        	//$scope.posts[i].elapsedTime = getElapsedTime($scope.posts[i].created_at, now);
           
         	console.log($scope.posts[i].elapsedTime);
         }
@@ -24,7 +24,7 @@
             for(var i = 0 ; i < $scope.posts.length; i++){
 
               var now = new Date().getTime();
-              $scope.posts[i].elapsedTime = getElapsedTime($scope.posts[i].created_at, now);
+              //$scope.posts[i].elapsedTime = getElapsedTime($scope.posts[i].created_at, now);
               
               console.log($scope.posts[i].elapsedTime);
             }
@@ -44,7 +44,7 @@
             for(var i = 0 ; i < $scope.posts.length; i++){
 
               var now = new Date().getTime();
-              $scope.posts[i].elapsedTime = getElapsedTime($scope.posts[i].created_at, now);
+              //$scope.posts[i].elapsedTime = getElapsedTime($scope.posts[i].created_at, now);
               
               console.log($scope.posts[i].elapsedTime);
             }
@@ -64,7 +64,7 @@
             for(var i = 0 ; i < $scope.posts.length; i++){
 
               var now = new Date().getTime();
-              $scope.posts[i].elapsedTime = getElapsedTime($scope.posts[i].created_at, now);
+              //$scope.posts[i].elapsedTime = getElapsedTime($scope.posts[i].created_at, now);
               
               console.log($scope.posts[i].elapsedTime);
             }

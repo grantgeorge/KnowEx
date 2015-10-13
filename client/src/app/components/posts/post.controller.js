@@ -19,11 +19,11 @@
         console.log($scope.advices);
         
         var now = new Date().getTime();
-        $scope.post.elapsedTime = getElapsedTime($scope.post.created_at, now);
+        // $scope.post.elapsedTime = getElapsedTime($scope.post.created_at, now);
         console.log($scope.post.elapsedTime);
 
         for(var i = 0 ; i < $scope.endorsements.length ; i++){
-          $scope.endorsements[i].elapsedTime = getElapsedTime($scope.endorsements[i].created_at, now);
+          // $scope.endorsements[i].elapsedTime = getElapsedTime($scope.endorsements[i].created_at, now);
           console.log("Endorsement " + $scope.endorsements[i].elapsedTime);
         }
 
