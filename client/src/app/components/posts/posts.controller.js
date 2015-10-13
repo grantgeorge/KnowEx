@@ -48,7 +48,7 @@
               
               console.log($scope.posts[i].elapsedTime);
             }
-            toastr.info("Posts from this month!");
+            toastr.info("Posts from this month!!");
 
           });
 
