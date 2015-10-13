@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('know-ex')
-    .controller('PostsController', function ($scope, $http, Posts, toastr) {
+    .controller('PostsController', function ($scope, $http, Posts) {
 
       Posts.query(function (res) {
         $scope.posts = res;
@@ -28,7 +28,7 @@
               
               console.log($scope.posts[i].elapsedTime);
             }
-            toastr.info("Most endorsed posts!");
+            // toastr.info("Most endorsed posts!");
 
           });
 
@@ -48,7 +48,7 @@
               
               console.log($scope.posts[i].elapsedTime);
             }
-            toastr.info("Posts from this month!!");
+            // toastr.info("Posts from this month!!");
 
           });
 
@@ -68,7 +68,7 @@
               
               console.log($scope.posts[i].elapsedTime);
             }
-            toastr.info("Best Posts from last 2 weeks!");
+            // toastr.info("Best Posts from last 2 weeks!");
 
           });
 
