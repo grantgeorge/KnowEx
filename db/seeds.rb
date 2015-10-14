@@ -35,6 +35,11 @@ ehouse = Group.create(name: 'E-House', location: 'everywhere')
                    created_at: '14-3-2014'
                    )
 
+    p6 = Post.create(title: 'Shooting is bad mkay',
+                   body: 'jk',
+                   user: grant_user,
+                   )
+
 
 # ======== Initializing User #2: Rob Reinold ========
 
@@ -88,7 +93,7 @@ ehouse = Group.create(name: 'E-House', location: 'everywhere')
       )
     e4 = Endorsement.create(
       text:"MadSkillz",
-      user_id: 2,
+      user_id: 1,
       endorseable_id: 4,
       endorseable_type: "Post"
       )

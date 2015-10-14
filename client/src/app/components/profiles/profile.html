@@ -9,9 +9,11 @@
     !
   </h1>
 
-<!--<div class="container" ng-repeat="profile in profiles"> -->
   <div class="container" >
   <div class="jumbotron">
+  <div>
+    <img class="media-object" src="/assets/images/profile_image_medium_{{profile.user.id}}.jpg">
+  </div>
     <h1>{{ profile.user.nickname }}</h1> 
     <p>{{ profile.introduction }}</p> 
     <p></p> 

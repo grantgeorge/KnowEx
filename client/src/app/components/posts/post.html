@@ -4,30 +4,31 @@
     <acme-navbar />
   </div>
 
-  <h1>{{post.title }}</h1>
+  <h1>
+    {{post.title }}
+  </h1>
+  <span class="badge">
+    {{post.tags.length}} 
+  </span> 
+  &nbsp; 
+  <span class="label label-success" ng-repeat="tag in tags">
+    {{ tag.name }}
+  </span>
+  
 
-<h3> Posted by {{ post.user.nickname}}</h3>
-<h5> {{post.elapsedTime}} </h5>
-  <div class="panel panel-primary">
-    <div class="panel-heading">
-      <h3 class="panel-title">
-        <span class="badge">{{post.tags.length}} </span> &nbsp; 
-        <span class="label label-success" ng-repeat="tag in tags">
-          {{ tag.name }}
-        </span>
-      </h3>
-    </div>
-    <div class="panel-body">
-      {{ post.body }}
-    </div>
-    <div class="panel-footer">
-      Posted by 
-      <a ng-href="#/profiles/{{ post.user.id}}">
-        {{ post.user.nickname }},
-      </a>
-      {{post.elapsedTime}}
-  </div>
-  </div>
+  <h3>
+     Posted by {{ post.user.nickname}}
+   </h3>
+
+  <span>
+    <img class="media-object" src="/assets/images/profile_image_medium_{{post.user.id}}.jpg">
+  </span>
+
+  <h5>
+     {{post.elapsedTime}} 
+  </h5>
+  
+  <div class="well">{{ post.body }}</div>
 
   <div class="panel panel-info" ng-repeat="endorsement in post.endorsements">
     <div class="panel-heading">
@@ -36,13 +37,11 @@
           {{ tag.name }}
         </span>
     </div>
-    <!--
-    This is redundant! Removing for the time being
-    <div class="panel-body">
-      {{ endorsement.text }}
-    </div>
-  -->
+
     <div class="panel-footer">
+    <span>
+      <img class="media-object" src="/assets/images/profile_image_small_{{endorsement.user.id}}.jpg">
+    </span>
       Posted by 
       <a ng-href="#/profiles/{{ endorsement.user.id}}">
         {{ endorsement.user.nickname }},
@@ -83,7 +82,9 @@
       </div>
 
     </div>
-    <div class="panel-footer">Posted by: {{ advice.user.nickname }}</div>
+    <div class="panel-footer">
+      Posted by: {{ advice.user.nickname }}
+    </div>
   </div>
 
 </div>
