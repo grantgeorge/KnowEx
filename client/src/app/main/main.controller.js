@@ -24,7 +24,7 @@
     }
 
     function showToastr() {
-      toastr.info('Fork <a href="https://github.com/Swiip/generator-gulp-angular" target="_blank"><b>generator-gulp-angular</b></a>');
+      toastr.info('LOL jk doesn\'t work');
       vm.classAnimation = '';
     }
 
