@@ -15,11 +15,15 @@
 
 <ul class="list-group" ng-repeat="post in posts">
   <li class="list-group-item">
+      <div>
+        <img class="media-object" src="/assets/images/profile_image_id_{{post.user.id}}.jpg">
+      </div>
+
       <div class="badge badge-primary" style="float:left;">
         {{post.tags.length}}
       </div>
       <a ng-href="#/posts/{{post.id}}">
-          &nbsp;  {{ post.title }}&nbsp;
+          &nbsp;  {{ post.title }} &nbsp;
       </a>
             
           <font color="#BEBEBE"> 
