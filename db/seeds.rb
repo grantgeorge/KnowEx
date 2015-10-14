@@ -107,6 +107,14 @@ ehouse = Group.create(name: 'E-House', location: 'everywhere')
 
     t4 = Tag.create(name:"MadSkillz");
 
+    a1 = Advice.create(
+      description: 'Guns are a sensitive topic! Mkay',
+      user:rob_user,
+      post_id:6
+      )
+
+    a1 << t4;
+    
     e1.tags << t1
     e2.tags << t2
     e3.tags << t3
@@ -121,3 +129,5 @@ ehouse = Group.create(name: 'E-House', location: 'everywhere')
     p2.endorsements << e2
     p1.endorsements << e3
     p4.endorsements << e4
+
+    p6.advices << a1
