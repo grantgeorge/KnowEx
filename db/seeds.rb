@@ -113,8 +113,6 @@ ehouse = Group.create(name: 'E-House', location: 'everywhere')
       post_id:6
       )
 
-    a1 << t4;
-    
     e1.tags << t1
     e2.tags << t2
     e3.tags << t3

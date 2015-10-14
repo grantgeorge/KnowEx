@@ -21,7 +21,6 @@ class V1::ProfilesController < ApplicationController
     # TODO: I need this to sort by number of endorsements
     # @profile.posts = @profile.posts.sort_by{|x| x.endorsements.length}.reverse
     @profile.user.nickname.capitalize!
-
     render json: @profile
     
   end
