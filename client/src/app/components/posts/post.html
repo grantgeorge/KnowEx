@@ -6,7 +6,8 @@
 
   <h1>{{post.title }}</h1>
 
-<h3> Posted by {{ post.user.nickname}} - {{post.elapsedTime}} </h3>
+<h3> Posted by {{ post.user.nickname}}</h3>
+<h5> {{post.elapsedTime}} </h5>
   <div class="panel panel-primary">
     <div class="panel-heading">
       <h3 class="panel-title">
@@ -30,12 +31,10 @@
 
   <div class="panel panel-info" ng-repeat="endorsement in post.endorsements">
     <div class="panel-heading">
-      <h3 class="panel-title">
-        Endorsement of <a ng-href="#/profiles/{{ post.user.id}}">{{ post.user.nickname }}</a> on:
+        Endorsement of <a ng-href="#/profiles/{{ post.user.id}}">{{ post.user.nickname }}</a> on:  
         <span class="label label-success" ng-repeat="tag in endorsement.tags">
           {{ tag.name }}
         </span>
-      </h3>
     </div>
     <!--
     This is redundant! Removing for the time being
