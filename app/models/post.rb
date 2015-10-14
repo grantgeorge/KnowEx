@@ -1,4 +1,8 @@
 class Post < ActiveRecord::Base
+
+  # All posts require a user
+  validates :user, presence: true
+
   belongs_to :user
   has_many :advices
   has_many :endorsements, as: :endorseable
