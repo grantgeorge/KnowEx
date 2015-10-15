@@ -39,7 +39,7 @@ var reloadPosts = function(filter, $scope, $http){
 
               $scope.posts = data;
             }
-          })
+          });
         };
 
 // TODO: Need to import this from util/ElapsedTime.js
