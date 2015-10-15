@@ -26,6 +26,7 @@
 
 // Helper method for reloading different filtered posts
 var reloadPosts = function(filter, $scope, $http){
+    'use strict';
   console.log('api/v1/'+filter);
           $http.get('api/v1/'+filter).success(function(data) {
 
