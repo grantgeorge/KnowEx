@@ -6,7 +6,7 @@ class Endorsement < ActiveRecord::Base
   # All Endorsements must require a user
    validates :user, presence: true
   # All endorsements require at least one tag
-    validates :tags, length: { minimum: 1}, message: "Please include at least one tag."
+    validates :tags, length: { minimum: 1, :message => "Please include at least one tag."}
   # Set logical maximum for tags
   # validates :tags, length: { maximum: MAX_TAGS}, message: "Tags don't grow on trees!"
 
