@@ -8,7 +8,7 @@ class Endorsement < ActiveRecord::Base
   # All endorsements require at least one tag
   validates :tags, length: { minimum: 1, :message => "Please include at least one tag."}
   # Set logical maximum for tags
-  validates :tags, length: { maximum: MAX_TAGS :message => "Tags don't grow on trees!"}
+  validates :tags, length: { maximum: MAX_TAGS, :message => "Tags don't grow on trees!"}
 
   belongs_to :user
   belongs_to :endorseable, polymorphic: true
