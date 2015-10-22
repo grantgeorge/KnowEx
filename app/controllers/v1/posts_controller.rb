@@ -67,6 +67,11 @@ class V1::PostsController < ApplicationController
     render json: @posts
   end
 
+  def addResponse (var1)
+    endorsement = var1;
+    byebug;
+  end
+
   private
 
     def set_post
